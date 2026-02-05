@@ -65,35 +65,35 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
       <div className="grid gap-4 md:grid-cols-2">
-        <label className="space-y-2 text-sm text-slate-300">
+        <label className="space-y-2 text-sm text-slate-600">
           <span>Email *</span>
           <input
             type="email"
             name="email"
             required
             placeholder="you@email.com"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-amber-300 focus:outline-none"
+            className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-400 focus:outline-none"
             disabled={status === "loading"}
           />
         </label>
-        <label className="space-y-2 text-sm text-slate-300">
+        <label className="space-y-2 text-sm text-slate-600">
           <span>Favorite stores</span>
           <input
             type="text"
             name="stores"
             placeholder="Amazon, Zara, IKEA"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-amber-300 focus:outline-none"
+            className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-400 focus:outline-none"
             disabled={status === "loading"}
           />
         </label>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <label className="space-y-2 text-sm text-slate-300">
+        <label className="space-y-2 text-sm text-slate-600">
           <span>Shopping frequency</span>
           <select
             name="frequency"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white focus:border-amber-300 focus:outline-none"
+            className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-emerald-400 focus:outline-none"
             disabled={status === "loading"}
             defaultValue=""
           >
@@ -107,11 +107,11 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
             ))}
           </select>
         </label>
-        <label className="space-y-2 text-sm text-slate-300">
+        <label className="space-y-2 text-sm text-slate-600">
           <span>Top category</span>
           <select
             name="category"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white focus:border-amber-300 focus:outline-none"
+            className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-emerald-400 focus:outline-none"
             disabled={status === "loading"}
             defaultValue=""
           >
@@ -127,20 +127,20 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
         </label>
       </div>
 
-      <label className="space-y-2 text-sm text-slate-300">
+      <label className="space-y-2 text-sm text-slate-600">
         <span>Biggest frustration</span>
         <textarea
           name="pain"
           rows={3}
           placeholder="Missing price drops, return windows, price match..."
-          className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-amber-300 focus:outline-none"
+          className="w-full rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-400 focus:outline-none"
           disabled={status === "loading"}
         />
       </label>
 
       <button
         type="submit"
-        className="w-full rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-60"
         disabled={status === "loading" || status === "success"}
       >
         {status === "loading" ? "Submitting..." : "Join the waitlist"}
@@ -148,10 +148,10 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
 
       {message && (
         <div
-          className={`rounded-xl border px-4 py-3 text-sm ${
+          className={`rounded-2xl border px-4 py-3 text-sm ${
             status === "success"
-              ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-200"
-              : "border-rose-500/40 bg-rose-500/10 text-rose-200"
+              ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+              : "border-rose-200 bg-rose-50 text-rose-700"
           }`}
         >
           {message}
