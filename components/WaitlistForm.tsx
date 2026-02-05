@@ -2,19 +2,19 @@
 
 import { useState } from "react";
 
-const volumeOptions = [
-  "0-100 / day",
-  "100-1k / day",
-  "1k-10k / day",
-  "10k+ / day",
+const frequencyOptions = [
+  "A few times a year",
+  "Monthly",
+  "Weekly",
+  "Daily",
 ];
 
-const stackOptions = [
-  "Node.js",
-  "Python",
-  "Ruby",
-  "Go",
-  "PHP",
+const categoryOptions = [
+  "Electronics",
+  "Fashion",
+  "Home & Kitchen",
+  "Beauty",
+  "Kids",
   "Other",
 ];
 
@@ -32,9 +32,9 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
     const formData = new FormData(event.currentTarget);
     const payload = {
       email: String(formData.get("email") || ""),
-      company: String(formData.get("company") || ""),
-      volume: String(formData.get("volume") || ""),
-      stack: String(formData.get("stack") || ""),
+      company: String(formData.get("stores") || ""),
+      volume: String(formData.get("frequency") || ""),
+      stack: String(formData.get("category") || ""),
       pain: String(formData.get("pain") || ""),
       source,
     };
@@ -71,18 +71,18 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
             type="email"
             name="email"
             required
-            placeholder="you@company.com"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none"
+            placeholder="you@email.com"
+            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-amber-300 focus:outline-none"
             disabled={status === "loading"}
           />
         </label>
         <label className="space-y-2 text-sm text-slate-300">
-          <span>Company</span>
+          <span>Favorite stores</span>
           <input
             type="text"
-            name="company"
-            placeholder="Acme Inc."
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none"
+            name="stores"
+            placeholder="Amazon, Zara, IKEA"
+            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-amber-300 focus:outline-none"
             disabled={status === "loading"}
           />
         </label>
@@ -90,17 +90,17 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
 
       <div className="grid gap-4 md:grid-cols-2">
         <label className="space-y-2 text-sm text-slate-300">
-          <span>Webhook volume</span>
+          <span>Shopping frequency</span>
           <select
-            name="volume"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
+            name="frequency"
+            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white focus:border-amber-300 focus:outline-none"
             disabled={status === "loading"}
             defaultValue=""
           >
             <option value="" disabled>
-              Select volume
+              Select frequency
             </option>
-            {volumeOptions.map((option) => (
+            {frequencyOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
               </option>
@@ -108,17 +108,17 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
           </select>
         </label>
         <label className="space-y-2 text-sm text-slate-300">
-          <span>Stack</span>
+          <span>Top category</span>
           <select
-            name="stack"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
+            name="category"
+            className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white focus:border-amber-300 focus:outline-none"
             disabled={status === "loading"}
             defaultValue=""
           >
             <option value="" disabled>
-              Select stack
+              Select category
             </option>
-            {stackOptions.map((option) => (
+            {categoryOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
               </option>
@@ -128,12 +128,12 @@ export function WaitlistForm({ source = "hero" }: { source?: string }) {
       </div>
 
       <label className="space-y-2 text-sm text-slate-300">
-        <span>Biggest pain</span>
+        <span>Biggest frustration</span>
         <textarea
           name="pain"
           rows={3}
-          placeholder="Flaky retries, debugging failures, missing payloads..."
-          className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none"
+          placeholder="Missing price drops, return windows, price match..."
+          className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-amber-300 focus:outline-none"
           disabled={status === "loading"}
         />
       </label>

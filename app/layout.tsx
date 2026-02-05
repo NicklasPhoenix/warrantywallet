@@ -13,23 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HookEcho — Webhook Replay + Contract Tests",
+  title: "PriceDrop Guard — Never miss a price drop",
   description:
-    "Capture real webhook payloads, replay them safely, diff versions, and auto-generate contract tests.",
-  metadataBase: new URL("https://hookecho.dev"),
+    "Track your purchases, watch for price drops, and claim refunds before the return window closes.",
+  metadataBase: new URL("https://pricedropguard.vercel.app"),
   openGraph: {
-    title: "HookEcho — Webhook Replay + Contract Tests",
+    title: "PriceDrop Guard — Never miss a price drop",
     description:
-      "Capture real webhook payloads, replay them safely, diff versions, and auto-generate contract tests.",
-    url: "https://hookecho.dev",
-    siteName: "HookEcho",
+      "Track your purchases, watch for price drops, and claim refunds before the return window closes.",
+    url: "https://pricedropguard.vercel.app",
+    siteName: "PriceDrop Guard",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HookEcho — Webhook Replay + Contract Tests",
+    title: "PriceDrop Guard — Never miss a price drop",
     description:
-      "Capture real webhook payloads, replay them safely, diff versions, and auto-generate contract tests.",
+      "Track your purchases, watch for price drops, and claim refunds before the return window closes.",
   },
 };
 

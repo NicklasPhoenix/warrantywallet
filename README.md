@@ -1,17 +1,17 @@
-# HookEcho
+# PriceDrop Guard
 
-Webhook Replay + Contract Tests.
+Never miss a price drop.
 
-Capture real webhook payloads, replay them safely, diff versions, and auto-generate
-contract tests that keep integrations stable.
+Track your purchases, watch for price drops, and claim refunds before the return
+window closes.
 
 ## Features
 
-- Secure webhook capture endpoint
-- Replay to staging/local with header/body overrides
-- Signature on/off + secret handling
-- Payload version diffs
-- Contract test generator (planned)
+- Track purchases via receipt forwarding or product links
+- Price drop alerts
+- Return window countdowns
+- Price history
+- Price-match playbook
 
 ## Local Development
 
@@ -22,7 +22,7 @@ npm install
 Create `.env.local`:
 
 ```env
-DATABASE_URL="postgresql://user:password@host:5432/hookecho"
+DATABASE_URL="postgresql://user:password@host:5432/pricedropguard"
 ```
 
 Then run:
@@ -41,11 +41,11 @@ Body:
 
 ```json
 {
-  "email": "you@company.com",
-  "company": "Acme Inc.",
-  "volume": "100-1k / day",
-  "stack": "Node.js",
-  "pain": "Debugging flaky retries"
+  "email": "you@email.com",
+  "company": "Amazon, Zara",
+  "volume": "Weekly",
+  "stack": "Electronics",
+  "pain": "Missing price drops"
 }
 ```
 
