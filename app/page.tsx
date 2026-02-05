@@ -3,57 +3,49 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 const highlights = [
   {
     title: "Receipt vault",
-    description: "Scan or forward receipts and keep every warranty in one place.",
+    description:
+      "Scan or forward receipts and keep every warranty in one calm, searchable place.",
   },
   {
-    title: "Expiry reminders",
-    description: "We alert you before warranties or return windows expire.",
+    title: "Expiry radar",
+    description:
+      "We track timelines and nudge you before warranties or returns expire.",
   },
   {
-    title: "Claim playbooks",
-    description: "Step-by-step checklists so claims are fast and painless.",
+    title: "Claim kits",
+    description:
+      "One tap gives you a clean claim bundle with receipt, serial, and steps.",
   },
 ];
 
-const features = [
-  {
-    title: "Auto warranty dates",
-    description: "We parse purchase dates and calculate warranty timelines for you.",
-  },
-  {
-    title: "Serial + model storage",
-    description: "Save serial numbers, order IDs, and proof of purchase.",
-  },
-  {
-    title: "Easy claim exports",
-    description: "One tap to export a PDF with everything a retailer asks for.",
-  },
-  {
-    title: "Family sharing",
-    description: "Keep the whole household organized in one shared wallet.",
-  },
-  {
-    title: "Private by default",
-    description: "No bank access. No card data. You control what’s saved.",
-  },
-  {
-    title: "Store policy shortcuts",
-    description: "Quick links to warranty and return policies by store.",
-  },
+const claimKit = [
+  "Receipt + purchase date",
+  "Serial number + model",
+  "Store policy link",
+  "Claim checklist",
+];
+
+const categories = [
+  "Electronics",
+  "Appliances",
+  "Furniture",
+  "Baby gear",
+  "Tools",
+  "Jewelry",
 ];
 
 const steps = [
   {
     title: "Add a purchase",
-    description: "Scan a receipt, forward an email, or add a product manually.",
+    description: "Snap a receipt or paste a product link. Done in 30 seconds.",
   },
   {
     title: "We organize it",
-    description: "Warranty Wallet tracks expiry, return windows, and proof.",
+    description: "Warranty Wallet calculates expiry dates and stores proof.",
   },
   {
-    title: "Claim with confidence",
-    description: "When something breaks, you’ll have everything ready.",
+    title: "Claim fast",
+    description: "Get a reminder + claim kit before it’s too late.",
   },
 ];
 
@@ -86,15 +78,15 @@ const faqs = [
   },
   {
     q: "What data do you store?",
-    a: "Only what you add: receipt images, product info, and warranty dates.",
+    a: "Only what you add: receipts, product info, warranty dates, and notes.",
   },
   {
     q: "Does this work in the EU?",
-    a: "Yes — we’ll start with EU warranty timelines and add store policies.",
+    a: "Yes — we start with EU warranty timelines and add store policies next.",
   },
   {
     q: "Can I export my data?",
-    a: "Yes. One tap exports a PDF or CSV of your warranty info.",
+    a: "Yes. One tap exports a PDF or CSV claim bundle.",
   },
 ];
 
@@ -112,7 +104,7 @@ export default function Home() {
                 Warranty Wallet
               </div>
               <div className="text-xs text-slate-500">
-                Every warranty in one place
+                Every warranty, always ready
               </div>
             </div>
           </div>
@@ -120,8 +112,8 @@ export default function Home() {
             <a className="hover:text-slate-900" href="#features">
               Features
             </a>
-            <a className="hover:text-slate-900" href="#how-it-works">
-              How it works
+            <a className="hover:text-slate-900" href="#claim-kit">
+              Claim kit
             </a>
             <a className="hover:text-slate-900" href="#pricing">
               Pricing
@@ -145,14 +137,14 @@ export default function Home() {
           <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pb-20 pt-16 lg:flex-row lg:items-center">
             <div className="flex-1">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">
-                Warranty tracking
+                warranty tracking
               </div>
               <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
-                Never lose a warranty again.
+                Receipts shouldn’t be treasure hunts.
               </h1>
               <p className="mt-5 max-w-xl text-lg text-slate-600">
-                Warranty Wallet keeps every receipt, serial, and expiry date in
-                one clean place — and reminds you before it’s too late.
+                Warranty Wallet turns receipts into clean, claim-ready cards and
+                reminds you before time runs out.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -163,14 +155,15 @@ export default function Home() {
                 </a>
                 <a
                   className="rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300"
-                  href="#how-it-works"
+                  href="#claim-kit"
                 >
-                  See how it works
+                  See a claim kit
                 </a>
               </div>
-              <div className="mt-6 flex items-center gap-6 text-xs text-slate-500">
-                <span>Never miss expiry reminders</span>
-                <span>Built for EU warranty rules</span>
+              <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-500">
+                <span>EU warranty timelines baked in</span>
+                <span>No bank access</span>
+                <span>Add in 30 seconds</span>
               </div>
             </div>
 
@@ -179,7 +172,7 @@ export default function Home() {
                 <div className="flex items-center justify-between text-xs text-slate-500">
                   <span>Warranty card</span>
                   <span className="rounded-full bg-indigo-50 px-2 py-1 text-indigo-600">
-                    Active
+                    14 months left
                   </span>
                 </div>
                 <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">
@@ -187,7 +180,7 @@ export default function Home() {
                     <span className="font-semibold text-slate-900">
                       Dyson V15 Detect
                     </span>
-                    <span>Ends in 14 months</span>
+                    <span>Active</span>
                   </div>
                   <pre className="mt-3 overflow-hidden text-[11px] text-slate-500">
 {`Purchase: 12 Apr 2026
@@ -210,9 +203,9 @@ Serial: DY-V15-2219`}
                   </div>
                 </div>
                 <div className="mt-4 rounded-2xl border border-slate-200 bg-gradient-to-br from-indigo-50 to-sky-50 p-4">
-                  <div className="text-xs text-slate-500">Claim checklist</div>
+                  <div className="text-xs text-slate-500">Next reminder</div>
                   <div className="mt-2 text-sm font-semibold text-slate-900">
-                    1. Warranty card · 2. Receipt · 3. Serial number
+                    60 days before expiry
                   </div>
                 </div>
               </div>
@@ -238,17 +231,95 @@ Serial: DY-V15-2219`}
           </div>
         </section>
 
+        <section className="mx-auto w-full max-w-6xl px-6 py-12">
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm lg:p-12">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+              <div>
+                <div className="text-xs uppercase tracking-[0.3em] text-indigo-600">
+                  The reality
+                </div>
+                <h2 className="mt-3 text-3xl font-semibold text-slate-900">
+                  Most warranty claims fail because of missing proof.
+                </h2>
+                <p className="mt-4 text-slate-600">
+                  Receipts get lost. Serial numbers vanish. Deadlines sneak up.
+                  Warranty Wallet keeps everything ready before you need it.
+                </p>
+              </div>
+              <div className="space-y-3 text-sm text-slate-600">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  Day 0 → you buy something expensive
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  Month 16 → it breaks and you start digging
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  Month 18 → claim denied (missing proof)
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="claim-kit" className="mx-auto w-full max-w-6xl px-6 py-12">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+            <div>
+              <div className="text-xs uppercase tracking-[0.3em] text-indigo-600">
+                Claim kit
+              </div>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900">
+                Everything you need in one clean bundle.
+              </h2>
+              <p className="mt-4 text-slate-600">
+                When something fails, we surface the proof, the policy, and the
+                exact steps to claim — without chaos.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm text-slate-600">
+                {claimKit.map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
+                      ✓
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex items-center justify-between text-xs text-slate-500">
+                <span>Claim bundle</span>
+                <span className="rounded-full bg-indigo-50 px-2 py-1 text-indigo-600">
+                  PDF ready
+                </span>
+              </div>
+              <div className="mt-4 space-y-3">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  Receipt.pdf
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  Serial: DY-V15-2219
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  Policy link + claim steps
+                </div>
+              </div>
+              <button className="mt-5 w-full rounded-full bg-indigo-600 px-4 py-3 text-sm font-semibold text-white">
+                Download claim kit
+              </button>
+            </div>
+          </div>
+        </section>
+
         <section id="features" className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="flex flex-col gap-3">
             <div className="text-xs uppercase tracking-[0.3em] text-indigo-600">
               Features
             </div>
             <h2 className="text-3xl font-semibold text-slate-900">
-              Clean, calm, and always ready.
+              Built for real life.
             </h2>
             <p className="max-w-2xl text-slate-600">
-              Warranty Wallet is built for people who want the confidence of
-              knowing they can claim when something breaks.
+              Simple tracking, calm reminders, and proof ready when you need it.
             </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -265,6 +336,34 @@ Serial: DY-V15-2219`}
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-6 pb-10">
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
+              <div>
+                <div className="text-xs uppercase tracking-[0.3em] text-indigo-600">
+                  What we track
+                </div>
+                <h2 className="mt-3 text-3xl font-semibold text-slate-900">
+                  The stuff that actually breaks.
+                </h2>
+                <p className="mt-4 text-slate-600">
+                  Start with your most valuable items. We’ll handle the rest.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {categories.map((category) => (
+                  <div
+                    key={category}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700"
+                  >
+                    {category}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
